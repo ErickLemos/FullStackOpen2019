@@ -1,0 +1,9 @@
+front   = browser
+back    = server
+
+front init
+front > back (HTTP/GET): 
+    - https://fullstack-exampleapp.herokuapp.com/spa        / HTML-code
+    - https://fullstack-exampleapp.herokuapp.com/main.css   / CSS-code
+    - https://fullstack-exampleapp.herokuapp.com/main.js    / Javascript-code
+    - https://fullstack-exampleapp.herokuapp.com/data.json  / Data in json

@@ -1,0 +1,12 @@
+front   = browser
+back    = server
+
+// create new note
+001: insert value in input
+002: click save
+
+front > back (HTTP/POST): https://fullstack-exampleapp.herokuapp.com/new_note_spa
+back: create new note in back-end
+
+front < back (HTTP/POST): HTTP STATUS 201
+front does not send http requests and stays on the same page

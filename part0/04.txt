@@ -1,0 +1,17 @@
+front   = browser
+back    = server
+
+// create new note
+001: insert value in input
+002: click save
+
+front > back (HTTP/POST): https://fullstack-exampleapp.herokuapp.com/new_note
+back: create new note in back-end
+
+front < back (HTTP/POST): HTTP STATUS
+front > back (HTTP/GET): 
+    - https://fullstack-exampleapp.herokuapp.com/notes      / HTML-code
+    - https://fullstack-exampleapp.herokuapp.com/main.css   / CSS-code
+    - https://fullstack-exampleapp.herokuapp.com/main.js    / Javascript-code
+    - https://fullstack-exampleapp.herokuapp.com/data.json  / Data in json
+    OBS: with new notes 
