@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="148dc5e6-cf4d-4bde-988c-daae349ed361" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/javascript.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@babel/parser/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@babel/parser/typings/babel-parser.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@babel/types/lib/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@babel/types/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/console/build/BufferedConsole.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/console/build/CustomConsole.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/console/build/NullConsole.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/console/build/getConsoleOutput.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/console/build/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/console/build/types.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/console/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/fake-timers/build/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/fake-timers/build/jestFakeTimers.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/fake-timers/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/source-map/build/getCallsite.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/source-map/build/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/source-map/build/types.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/source-map/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/test-result/build/formatTestResults.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/test-result/build/helpers.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/test-result/build/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/test-result/build/types.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/test-result/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/types/build/Circus.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/types/build/Config.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/types/build/Global.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/types/build/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@jest/types/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/babel__core/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/babel__core/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/babel__generator/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/babel__generator/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/babel__template/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/babel__template/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/babel__traverse/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/babel__traverse/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/eslint-visitor-keys/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/eslint-visitor-keys/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/istanbul-lib-coverage/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/istanbul-lib-coverage/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/istanbul-lib-report/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/istanbul-lib-report/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/istanbul-reports/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/istanbul-reports/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/json-schema/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/json-schema/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/q/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/q/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/stack-utils/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/stack-utils/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/yargs-parser/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/yargs-parser/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/yargs/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/yargs/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/@types/yargs/yargs.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/babel-jest/build/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/babel-jest/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chalk/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chalk/types/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/dotenv-expand/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/dotenv-expand/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-haste-map/build/HasteFS.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-haste-map/build/ModuleMap.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-haste-map/build/blacklist.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-haste-map/build/constants.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-haste-map/build/crawlers/node.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-haste-map/build/crawlers/watchman.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-haste-map/build/getMockName.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-haste-map/build/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-haste-map/build/lib/FSEventsWatcher.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-haste-map/build/lib/dependencyExtractor.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-haste-map/build/lib/fast_path.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-haste-map/build/lib/getPlatformExtension.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-haste-map/build/lib/isRegExpSupported.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-haste-map/build/lib/normalizePathSep.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-haste-map/build/types.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-haste-map/build/worker.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-haste-map/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-message-util/build/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-message-util/build/types.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-message-util/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-mock/build/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-mock/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-resolve/build/defaultResolver.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-resolve/build/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-resolve/build/isBuiltinModule.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-resolve/build/nodeModulesPaths.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-resolve/build/types.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-resolve/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-serializer/build/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-serializer/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-serializer/v8.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-util/build/ErrorWithStack.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-util/build/clearLine.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-util/build/convertDescriptorToString.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-util/build/createDirectory.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-util/build/createProcessObject.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-util/build/deepCyclicCopy.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-util/build/getFailedSnapshotTests.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-util/build/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-util/build/installCommonGlobals.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-util/build/interopRequireDefault.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-util/build/isInteractive.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-util/build/isPromise.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-util/build/pluralize.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-util/build/preRunMessage.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-util/build/replacePathSepForGlob.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-util/build/setGlobal.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-util/build/specialChars.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-util/build/testPathPatternToRegExp.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-util/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-worker/build/Farm.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-worker/build/WorkerPool.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-worker/build/base/BaseWorkerPool.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-worker/build/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-worker/build/types.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-worker/build/workers/ChildProcessWorker.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-worker/build/workers/NodeThreadsWorker.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-worker/build/workers/processChild.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-worker/build/workers/threadChild.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest-worker/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest/build/jest.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/jest/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-server.browser.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-server.browser.production.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-server.node.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-server.node.production.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-test-utils.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-test-utils.production.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-unstable-fizz.browser.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-unstable-fizz.browser.production.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-unstable-fizz.node.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-unstable-fizz.node.production.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-unstable-native-dependencies.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-unstable-native-dependencies.production.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom.production.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom.profiling.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/profiling.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/server.browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/server.node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/test-utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom-server.browser.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom-server.browser.production.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom-test-utils.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom-test-utils.production.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom-unstable-fizz.browser.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom-unstable-fizz.browser.production.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom-unstable-native-dependencies.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom-unstable-native-dependencies.production.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom.production.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom.profiling.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/unstable-fizz.browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/unstable-fizz.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/unstable-fizz.node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-dom/unstable-native-dependencies.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-scripts/lib/react-app.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-scripts/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-scripts/template-typescript/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-scripts/template-typescript/src/App.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-scripts/template-typescript/src/App.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-scripts/template-typescript/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-scripts/template-typescript/src/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-scripts/template-typescript/src/serviceWorker.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-scripts/template/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react-scripts/template/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/cjs/react.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/cjs/react.production.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/umd/react.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/umd/react.production.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/umd/react.profiling.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/realpath-native/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/realpath-native/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/source-map/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/worker-farm/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/worker-farm/package.json" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1PW12biuQPlHtTaJZ2pXnsIqJoG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.7.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/examples" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="148dc5e6-cf4d-4bde-988c-daae349ed361" name="Default Changelist" comment="" />
+      <created>1565974831901</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1565974831901</updated>
+      <workItem from="1565974833239" duration="1515000" />
+      <workItem from="1565976363225" duration="497000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
