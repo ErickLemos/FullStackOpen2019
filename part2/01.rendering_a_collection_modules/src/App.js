@@ -2,6 +2,7 @@ import React from 'react'
 import Course from "./components/Course";
 
 const App = () => {
+    //add new course redux
     const course = {
         name: 'Half Stack application development',
         parts: [
@@ -19,6 +20,11 @@ const App = () => {
                 name: 'State of a component',
                 exercises: 14,
                 id: 3
+            },
+            {
+                name: 'Redux',
+                exercises: 11,
+                id: 4
             }
         ]
     };
