@@ -45,7 +45,12 @@ const App = (props) => {
     const [bad, setBad] = useState(0);
 
     const [selected, setSelected] = useState(0);
-    const randomNumber = () => Math.floor(Math.random() * 5) + 0;
+    const [vote, setVote] = useState(0);
+
+    const nextAnecdote = () => {
+        setSelected(Math.floor(Math.random() * 5));
+        setVote(0)
+    };
 
     return (
         <div>
@@ -58,7 +63,11 @@ const App = (props) => {
 
             <h2>Anecdote</h2>
             <p>{props.anecdotes[selected]}</p>
-            <Button handleClick={() => setSelected(randomNumber())} text={'next anecdote'}/>
+            <p>anecdote votes: {vote}</p>
+            <div>
+                <Button handleClick={() => setVote(vote + 1)} text={'Vote'}/>
+                <Button handleClick={() => nextAnecdote()} text={'next anecdote'}/>
+            </div>
         </div>
     )
 };
