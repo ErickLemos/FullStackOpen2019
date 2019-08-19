@@ -1,14 +1,14 @@
 import React from 'react'
 
-const CourseTotal = ({course}) => {
+const CourseTotal = ({courseParts}) => {
 
-    let total = 0;
-    course.map(course => {
-        total += course.exercises
-    });
+    const total = courseParts.reduce((a, b) => ({
+        exercises: a.exercises + b.exercises
+        })
+    );
 
     return (
-        <p>total of {total} exercises</p>
+        <p>total of {total.exercises} exercises</p>
     )
 };
 
