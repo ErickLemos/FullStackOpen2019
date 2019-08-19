@@ -17,16 +17,20 @@ const Statistics = (props) => {
     return (
         <div>
             <h2>Statistics</h2>
-            <p>Good: {props.good}</p>
-            <p>Neutral: {props.neutral}</p>
-            <p>Bad: {props.bad}</p>
-            <p>All: {props.good + props.neutral + props.bad}</p>
-            <p>Average: {props.good - props.bad}</p>
-            <p>Positive: {props.good * 100 / (props.good + props.neutral + props.bad)}</p>
+            <Statistic text={'Good'} value={props.good}/>
+            <Statistic text={'Neutral'} value={props.neutral}/>
+            <Statistic text={'Bad'} value={props.bad}/>
+            <Statistic text={'All'} value={props.good + props.neutral + props.bad}/>
+            <Statistic text={'Average'} value={props.good - props.bad}/>
+            <Statistic text={'Positive'} value={props.good * 100 / (props.good + props.neutral + props.bad)}/>
         </div>
     )
+};
 
-
+const Statistic = (props) => {
+    return (
+        <p>{props.text}: {props.value}</p>
+    )
 };
 
 const App = () => {
