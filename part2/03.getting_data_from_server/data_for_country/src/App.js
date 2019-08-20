@@ -41,7 +41,15 @@ const App = () => {
   };
 
   const showCountrys = () => countrysListShow.map(country => {
-    return <p key={country.alpha3Code}>{country.name}</p>
+    return (
+    <p key={country.alpha3Code}>{country.name}
+      <button onClick={() => setInputSearch(country.name)}>show
+      </button>
+    </p>
+    )
+
+
+
   });
 
   const showCountry = () => countrysListShow.map(country => {
