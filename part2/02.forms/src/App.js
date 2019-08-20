@@ -10,7 +10,20 @@ const App = () => {
         setNewName(event.target.value);
     };
 
+
     const addPerson = (event) => {
+        let boolean001 = false;
+
+        persons.forEach(function (person) {
+            if (person.name === newName) {
+                boolean001 = true;
+            }
+        });
+
+        if (boolean001) {
+            return alert(`${newName} is already added to phonebook`);
+        }
+
         event.preventDefault();
         const personObject = {
             name: newName,
