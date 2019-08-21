@@ -63,6 +63,17 @@ const App = () => {
         });
     };
 
+    const deletePerson = (event, person) => {
+        event.preventDefault();
+        if (window.confirm(`delete ${person.name}`)) {
+            personService.remove(person.id).then(response => {
+                setNewNumber('');
+                setPersons(persons.filter(personTemp => personTemp != person))
+            });
+        }
+
+    };
+
     return (
         <div>
             <h2>Phonebook</h2>
@@ -70,7 +81,7 @@ const App = () => {
             <h2>add a new</h2>
             <PersonForm name={newName} phone={newNumber} onChangeName={handleNameChange} onChangePhone={handleNumberChange} addPerson={addPerson}/>
             <h2>Numbers</h2>
-            <Persons persons={persons} search={search}/>
+            <Persons persons={persons} search={search} deletePerson={deletePerson}/>
         </div>
     )
 };

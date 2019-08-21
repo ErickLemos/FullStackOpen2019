@@ -22,5 +22,12 @@ const update = (id, newObject) => {
         .catch(() => console.log('fail'));
 };
 
-export default {getAll, create, update}
+const remove = (id) => {
+    const request = axios.delete(`${baseUrl}/${id}`);
+    return request
+        .then(response => response.data)
+        .catch(() => console.log('fail'));
+};
+
+export default {getAll, create, update, remove}
 // complete
