@@ -23,3 +23,4 @@ const update = (id, newObject) => {
 };
 
 export default {getAll, create, update}
+// complete
