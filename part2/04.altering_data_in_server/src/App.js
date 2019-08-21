@@ -37,30 +37,45 @@ const App = () => {
 
     // CRUD
     const addPerson = (event) => {
-        let boolean001 = false;
-
-        persons.forEach(function (person) {
-            if (person.name === newName) {
-                boolean001 = true;
-            }
-        });
-
-        if (boolean001) {
-            return alert(`${newName} is already added to phonebook`);
-        }
+        let update = {boolean: false, name: '', id: 0};
 
         event.preventDefault();
         const personObject = {
             name: newName,
             number: newNumber,
-            id: persons.length + 1
+            id: persons.length
         };
 
-        personService.create(personObject).then(response => {
-            setPersons(persons.concat(response));
-            setNewName('');
-            setNewNumber('');
+        persons.forEach(function (person) {
+            if (person.name === newName) {
+                update.boolean = true;
+                update.id = person.id;
+                update.name = person.name;
+            }
         });
+
+        if (update.boolean) {
+            if (window.confirm(`${update.name} is already added to phonebook, replace the old number with new one?`)) {
+                personService.update(update.id, personObject).then(
+                    response => {
+                        setPersons(persons.filter(
+                            personTemp => personTemp.id !== update.id)
+                            .concat(personObject));
+                        setNewName('');
+                        setNewNumber('');
+                    }
+                )
+            }
+        } else {
+            personService.create(personObject).then(
+                response => {
+                    setPersons(persons.concat(response));
+                    setNewName('');
+                    setNewNumber('');
+                }
+            )
+        }
+
     };
 
     const deletePerson = (event, person) => {
@@ -68,7 +83,7 @@ const App = () => {
         if (window.confirm(`delete ${person.name}`)) {
             personService.remove(person.id).then(response => {
                 setNewNumber('');
-                setPersons(persons.filter(personTemp => personTemp != person))
+                setPersons(persons.filter(personTemp => personTemp !== person))
             });
         }
 

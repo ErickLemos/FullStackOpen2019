@@ -6,7 +6,7 @@ const Persons = ({persons, search, deletePerson}) => {
     console.log(personToShow);
     const rows = () => personToShow.map(person => {
         return (
-            <p key={person.id}>
+            <p key={person.name}>
                 <Person person={person}/>
                 <button onClick={(event) => deletePerson(event, person)}>delete</button>
             </p>
