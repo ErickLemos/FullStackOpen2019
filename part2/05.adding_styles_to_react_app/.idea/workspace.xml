@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d2af2b88-345e-4bff-aae1-b88d8b981f5c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/05.adding_styles_to_react_app.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Notification.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../04.altering_data_in_server/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/../04.altering_data_in_server/db.json" afterDir="false" />
-    </list>
+    <list default="true" id="d2af2b88-345e-4bff-aae1-b88d8b981f5c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +50,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1566400495459</updated>
-      <workItem from="1566400496955" duration="2009000" />
+      <workItem from="1566400496955" duration="2356000" />
     </task>
     <servers />
   </component>
