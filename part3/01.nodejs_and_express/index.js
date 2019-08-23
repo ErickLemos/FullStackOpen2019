@@ -3,6 +3,11 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
+const generateId = () => {
+    const maxId = persons.length > 0 ? Math.max(...persons.map(n => n.id)) : 0;
+    return maxId + 1
+};
+
 let persons = [
     {
         "name": "a",
@@ -62,6 +67,31 @@ app.delete('/api/persons/:id', (req, res) => {
     persons = persons.filter(person => person.id !== id);
 
     res.status(204).end();
+});
+
+app.post('/api/persons', (req, res) => {
+    const body = req.body;
+
+    if (!body.name) {
+        return res.status(400).json({
+           error: 'name missing '
+        });
+    }
+
+    if (!body.number) {
+        return res.status(400).json({
+            error: 'number missing'
+        })
+    }
+
+    const person = {
+        name: body.name,
+        number: body.number,
+        id: generateId()
+    };
+
+    persons = persons.concat(person);
+    res.json(person);
 });
 
 const port = 3001;
