@@ -1,7 +1,9 @@
 const totalLikes = require('../utils/list_helper').totalLikes
 const dummy = require('../utils/list_helper').dummy
 const favoriteBlog = require('../utils/list_helper').favoriteBlog
+const mostBlogs = require('../utils/list_helper').mostBlogs
 const dataBlogs = require('./data.blogs')
+
 
 
 describe('list helper', () => {
@@ -29,6 +31,16 @@ describe('list helper', () => {
                 __v: 0
             }
         
+        expect(result).toEqual(compare)
+    })
+
+    test('mostBlog', () => {
+        const result = mostBlogs(dataBlogs)
+        const compare = {
+            author: 'Robert C. Martin',
+            blogs: 3
+        }
+        console.log(result)
         expect(result).toEqual(compare)
     })
 
