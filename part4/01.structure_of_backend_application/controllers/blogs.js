@@ -49,12 +49,12 @@ blogsRouter.delete('/:id', (request, response, next) => {
 blogsRouter.put('/:id', (request, response, next) => {
     const body = request.body
 
-    const blog = new Blog({
+    const blog = {
         title: body.title,
         author: body.author,
         url: body.url,
         likes: body.likes
-    })
+    }
 
     Blog.findByIdAndUpdate(request.params.id, blog, {new: true})
         .then(updatedBlog => {
