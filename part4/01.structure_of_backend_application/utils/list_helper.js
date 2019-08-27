@@ -16,7 +16,11 @@ const favoriteBlog = (blogs) => {
             maxObj = person
         }
     })
-    return maxObj
+    return {
+        title: maxObj.title,
+        author: maxObj.author,
+        likes: maxObj.likes
+    }
 }
 
 const mostBlogs = (blogs) => {
@@ -33,9 +37,34 @@ const mostBlogs = (blogs) => {
     }
 }
 
+const mostLikes = (blogs) => {
+    let blogsFormatted = []
+    // const mostLikes = {
+    //     author: '',
+    //     likes: 0
+    // }
+
+    blogs = lodash.groupBy(blogs, 'author')
+    
+    lodash.map(blogs, authorTemp => {
+        let likesCont = 0
+        
+        authorTemp.map(blog => likesCont += blog.likes)
+        blogsFormatted.push({
+            author: authorTemp[0].author,
+            likes: likesCont
+        }) 
+    })
+
+    blogsFormatted = lodash.maxBy(blogsFormatted, author => author.likes)
+
+    console.log(blogsFormatted)
+    return blogsFormatted}
+
 module.exports = {
     dummy,
     totalLikes,
     favoriteBlog,
-    mostBlogs
+    mostBlogs,
+    mostLikes
 }
