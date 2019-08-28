@@ -25,6 +25,23 @@ test('blogs list GET', async () => {
         .expect('Content-Type', /application\/json/)
 })
 
+test('blogs list ID', async () => {
+    const response = await api.get('/api/blogs')
+    expect(response.body[0].id).toBeDefined()
+})
+
+test('a specific blog can be viewed', async () => {
+    const blogAtStart = await helper.blogsInDb()
+    const blogToView = blogAtStart[0]
+
+    const resultBlog = await api
+        .get(`/api/blogs/${blogToView.id}`)
+        .expect(200)
+        .expect('Content-Type', /application\/json/)
+
+    expect(resultBlog.body).toEqual(blogToView)
+})
+
 test('all blogs are returned', async () => {
     const response = await api.get('/api/blogs')
     expect(response.body.length).toBe(helper.initialBlogs.length)
@@ -57,17 +74,7 @@ test('a valid blog can be added', async () => {
     expect(contents).toContain('testeAdd')
 })
 
-test('a specific blog can be viewed', async () => {
-    const blogAtStart = await helper.blogsInDb()
-    const blogToView = blogAtStart[0]
 
-    const resultBlog = await api
-        .get(`/api/blogs/${blogToView.id}`)
-        .expect(200)
-        .expect('Content-Type', /application\/json/)
-
-    expect(resultBlog.body).toEqual(blogToView)
-})
 
 test('a note can be deleted', async () => {
     const blogsAtStart = await helper.blogsInDb()
