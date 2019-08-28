@@ -25,6 +25,13 @@ test('blogs list GET', async () => {
         .expect('Content-Type', /application\/json/)
 })
 
+test('blogs list Likes', async () => {
+    const response = await api.get('/api/blogs')
+    let blogsZero = await response.body.filter(blog => blog.likes === undefined)
+    blogsZero = await blogsZero.map(blog => blog.likes = 0)
+    expect(blogsZero[0]).toBe(0)
+})
+
 test('blogs list ID', async () => {
     const response = await api.get('/api/blogs')
     expect(response.body[0].id).toBeDefined()
@@ -78,8 +85,7 @@ test('a specific blog is within the returned blogs', async () => {
     const response = await api.get('/api/blogs')
     const contents = response.body.map(blog => blog.title)
     expect(contents).toContain('teste002')
-})
-
+}) 
 
 test('a note can be deleted', async () => {
     const blogsAtStart = await helper.blogsInDb()
