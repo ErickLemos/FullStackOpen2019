@@ -30,6 +30,33 @@ test('blogs list ID', async () => {
     expect(response.body[0].id).toBeDefined()
 })
 
+test('blogs list POST', async () => {
+    const newBlog = {
+        title: 'testeAdd',
+        author: 'author',
+        url: 'url',
+        likes: 12
+    }
+
+    await api
+        .post('/api/blogs')
+        .send(newBlog)
+        .expect(200)
+        .expect('Content-Type', /application\/json/)
+
+    const blogsAtEnd = await helper.blogsInDb()
+    expect(blogsAtEnd.length).toBe(helper.initialBlogs.length + 1)
+
+    const title = blogsAtEnd.map(blog => blog.title)
+    const author = blogsAtEnd.map(blog => blog.author)
+    const url = blogsAtEnd.map(blog => blog.url)
+    const likes = blogsAtEnd.map(blog => blog.likes)
+    expect(title).toContain('testeAdd')
+    expect(author).toContain('author')
+    expect(url).toContain('url')
+    expect(likes).toContain(12)
+})
+
 test('a specific blog can be viewed', async () => {
     const blogAtStart = await helper.blogsInDb()
     const blogToView = blogAtStart[0]
@@ -52,28 +79,6 @@ test('a specific blog is within the returned blogs', async () => {
     const contents = response.body.map(blog => blog.title)
     expect(contents).toContain('teste002')
 })
-
-test('a valid blog can be added', async () => {
-    const newBlog = {
-        title: 'testeAdd',
-        author: 'author',
-        url: 'url',
-        likes: 12
-    }
-
-    await api
-        .post('/api/blogs')
-        .send(newBlog)
-        .expect(200)
-        .expect('Content-Type', /application\/json/)
-
-    const blogsAtEnd = await helper.blogsInDb()
-    expect(blogsAtEnd.length).toBe(helper.initialBlogs.length + 1)
-
-    const contents = blogsAtEnd.map(blog => blog.title)
-    expect(contents).toContain('testeAdd')
-})
-
 
 
 test('a note can be deleted', async () => {
