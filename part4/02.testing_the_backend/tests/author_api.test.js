@@ -65,6 +65,26 @@ test('blogs list POST', async () => {
     expect(likes).toContain(12)
 })
 
+test('blogs list PUT', async () => {
+    const response = await api.get('/api/blogs')
+    const updateBlog = {
+        id: response.body[0].id,
+        title: 'newTitle',
+        author: 'newAuthor',
+        url: 'newUrl',
+        likes: 13
+    }
+    
+    await api
+        .put(`/api/blogs/${updateBlog.id}`)
+        .send(updateBlog)
+        .expect(200)
+        .expect('Content-Type', /application\/json/)
+
+    const blogsAtEnd = await helper.blogsInDb()
+    expect(blogsAtEnd.length).toBe(helper.initialBlogs.length)
+})
+
 test('blogs list DELETE', async () => {
     const blogsAtStart = await helper.blogsInDb()
     const blogToDelete = blogsAtStart[0]
