@@ -58,6 +58,7 @@ test('blogs list POST', async () => {
     const author = blogsAtEnd.map(blog => blog.author)
     const url = blogsAtEnd.map(blog => blog.url)
     const likes = blogsAtEnd.map(blog => blog.likes)
+    // exec 12
     expect(title).toContain('testeAdd')
     expect(author).toContain('author')
     expect(url).toContain('url')
