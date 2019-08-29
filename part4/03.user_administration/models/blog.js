@@ -37,6 +37,7 @@ const blogSchema = new mongoose.Schema({
     }
 })
 
+
 blogSchema.plugin(uniqueValidator)
 blogSchema.set('toJSON', {
     transform: (document, returnedObject) => {
