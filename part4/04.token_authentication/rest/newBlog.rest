@@ -1,10 +1,11 @@
 post http://localhost:3001/api/blogs
 Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjVkNjdlMWQ0MGJkODg4MjJjYTYwNWNjMCIsImlhdCI6MTU2NzA5MjY4M30.m1H5Vw1to4ps4boihUHg-ClFIXQrAu3tT3zrnPdmuL4
 
 {
-    "title": "newBlog with usera",
+    "title": "blog003",
     "author": "Erick B. Lemos",
     "url": "url",
     "likes": 123,
-    "userId": "5d67cdc14412615da98c3b49"
+    "userId": "5d67e1d40bd88822ca605cc0"
 }
