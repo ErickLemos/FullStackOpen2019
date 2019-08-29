@@ -1,0 +1,10 @@
+post http://localhost:3001/api/blogs
+Content-Type: application/json
+
+{
+    "title": "newBlog with usera",
+    "author": "Erick B. Lemos",
+    "url": "url",
+    "likes": 123,
+    "userId": "5d67cdc14412615da98c3b49"
+}
