@@ -1,9 +1,9 @@
 post http://localhost:3001/api/blogs
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjVkNjdlMWQ0MGJkODg4MjJjYTYwNWNjMCIsImlhdCI6MTU2NzA5MjY4M30.m1H5Vw1to4ps4boihUHg-ClFIXQrAu3tT3zrnPdmuL4
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjVkNjdlMWQ0MGJkODg4MjJjYTYwNWNjMCIsImlhdCI6MTU2NzA5NTU1Mn0.r9pRFNxcHsqk_RiurwP0E_BvQIh3_zqY8vrZz6aLBRw
 
 {
-    "title": "blog003",
+    "title": "blog004",
     "author": "Erick B. Lemos",
     "url": "url",
     "likes": 123,

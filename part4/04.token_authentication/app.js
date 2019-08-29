@@ -23,6 +23,7 @@ mongoose.connect(config.MONGODB_URI, {useNewUrlParser: true})
 app.use(cors())
 app.use(express.static('build'))
 app.use(bodyParser.json())
+app.use(middleware.tokenExtractor)
 app.use(middleware.requestLogger)
 
 app.use('/api/blogs', blogRouter)
@@ -31,5 +32,6 @@ app.use('/api/login', loginRouter)
 
 app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler)
+
 
 module.exports = app
