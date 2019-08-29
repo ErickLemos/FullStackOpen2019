@@ -1,5 +1,4 @@
 const totalLikes = require('../utils/list_helper').totalLikes
-const dummy = require('../utils/list_helper').dummy
 const favoriteBlog = require('../utils/list_helper').favoriteBlog
 const mostBlogs = require('../utils/list_helper').mostBlogs
 const mostLikes = require('../utils/list_helper').mostLikes
@@ -12,12 +11,6 @@ describe('list helper', () => {
     test('totalLikes sum', () => {
         const result = totalLikes(dataBlogs)
         expect(result).toBe(36)
-    })
-
-    test('dummy returns one', () => {
-        const blogs = []
-        const result = dummy(blogs)
-        expect(result).toBe(1)
     })
 
     test('favoriteBlog', () => {
