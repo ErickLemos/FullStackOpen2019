@@ -1,111 +1,117 @@
-import React, { useState, useEffect } from "react";
-import loginService from "./services/login";
-import blogsService from "./services/blogs";
-import Blog from "./components/Blog";
+import React, { useState, useEffect } from 'react'
+import loginService from './services/login'
+import blogsService from './services/blogs'
+import Blog from './components/Blog'
+import FormBlog from './components/FormBlog'
+import FormLogin from './components/FormLogin';
 
 const App = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [newBlogTitle, setNewBlogTitle] = useState("");
-  const [user, setUser] = useState(null);
-  const [blogs, setBlogs] = useState([]);
+	const [username, setUsername] = useState('')
+	const [password, setPassword] = useState('')
+	const [user, setUser] = useState(null)
+	const [blogs, setBlogs] = useState([])
 
-  useEffect(() => {
-    const loggedUserJson = window.localStorage.getItem("logged");
-    if (loggedUserJson) {
-      const user = JSON.parse(loggedUserJson);
-      setUser(user);
-      blogsService.setToken(user.token);
-    }
-  }, []);
+	const [blogTitle, setBlogTitle] = useState('')
+	const [blogAuthor, setBlogAuthor] = useState('')
+	const [blogUrl, setBlogUrl] = useState('')
 
-  useEffect(() => {
-    const blogs = blogsService.getAll().then(response => setBlogs(response));
-    console.log("[BLOGS_DATA]", blogs);
-  }, []);
+	useEffect(() => {
+		const loggedUserJson = window.localStorage.getItem('logged')
+		if (loggedUserJson) {
+			const user = JSON.parse(loggedUserJson)
+			setUser(user)
+			blogsService.setToken(user.token)
+		}
+	}, [])
 
-  const handleLogin = async event => {
-    event.preventDefault();
-    try {
-      const user = await loginService.login({ username, password });
-      window.localStorage.setItem("logged", JSON.stringify(user));
-      blogsService.setToken(user.token);
+	useEffect(() => {
+		const blogs = blogsService.getAll().then(response => setBlogs(response))
+		console.log('[BLOGS_DATA]', blogs)
+	}, [])
 
-      setUser(user);
-      setUsername("");
-      setPassword("");
-      console.log("Happy user", user);
-    } catch (error) {
-      console.log("Wrong credentials");
-      setTimeout(() => {
-        console.log("null");
-      }, 5000);
-    }
-  };
+	const handleLogin = async event => {
+		event.preventDefault()
+		try {
+			const user = await loginService.login({ username, password })
+			window.localStorage.setItem('logged', JSON.stringify(user))
+			blogsService.setToken(user.token)
 
-  const handleBlogTitleChange = event => {
-    setNewBlogTitle(event.target.value);
-    console.log("logout complete");
-  };
+			setUser(user)
+			setUsername('')
+			setPassword('')
+			console.log('Happy user', user)
+		} catch (error) {
+			console.log('Wrong credentials')
+			setTimeout(() => {
+				console.log('null')
+			}, 5000)
+		}
+	}
 
-  const loginForm = () => (
-    <form onSubmit={handleLogin}>
-      <div>
-        username
-        <input
-          type="text"
-          value={username}
-          name="Username"
-          onChange={({ target }) => setUsername(target.value)}
-        />
-      </div>
+	const handleBlogTitle = (event) => {
+		setBlogTitle(event.target.value)
+	}
 
-      <div>
-        password
-        <input
-          type="password"
-          value={password}
-          name="Password"
-          onChange={({ target }) => setPassword(target.value)}
-        />
-      </div>
+	const handleBlogAuthor = (event) => {
+		setBlogAuthor(event.target.value)
+	}
 
-      <button type="submit">login</button>
-    </form>
-  );
+	const handleBlogUrl = (event) => {
+		setBlogUrl(event.target.value)
+	}
 
-  const logout = () => {
-    window.localStorage.removeItem("logged");
-	setUser(null)
-};
+	const createNewBlog = async (event) => {
+		console.log('pajdosadihi')
+		event.preventDefault()
+		const blogObject = {
+			title: blogTitle,
+			author: blogAuthor,
+			url: blogUrl
+		}
 
-  const blogFormRows = () =>
-    blogs.map(blog => {
-      return <Blog key={blog.user.id} blog={blog} />;
-    });
+		const blogCreated = await blogsService.create(blogObject)
+		setBlogs(blogs.concat(blogCreated))
+	}
 
-  const blogForm = () => (
-    <form>
-      <input value={newBlogTitle} onChange={handleBlogTitleChange} />
-      <button type="submit">save</button>
-      {blogFormRows(() => blogsService.getAll())}
-    </form>
-  );
+	const logout = () => {
+		window.localStorage.removeItem('logged')
+		setUser(null)
+	}
 
-  return (
-    <div>
-      {user === null ? (
-        loginForm()
-      ) : (
-        <div>
-          <p>
-            {user.name} logged in <button onClick={logout}>Logout</button>
-          </p>
-          <div>{blogForm()}</div>
-        </div>
-      )}
-    </div>
-  );
-};
+	const blogFormRows = () =>
+		blogs.map(blog => {
+			return <Blog key={blog.id} blog={blog} />
+		})
 
-export default App;
+	return (
+		<div>
+			{user === null ? (
+				<FormLogin 
+					handleLogin={handleLogin} 
+					username={username} 
+					password={password}
+					setUsername={setUsername}
+					setPassword={setPassword} 
+				/>
+			) : (
+				<div>
+					<p>
+						{user.name} logged in <button onClick={logout}>Logout</button>
+					</p>
+					<FormBlog 
+						createNewBlog={createNewBlog}
+						blogTitle={blogTitle}
+						blogAuthor={blogAuthor}
+						blogUrl={blogUrl}
+						handleBlogTitle={handleBlogTitle}
+						handleBlogAuthor={handleBlogAuthor}
+						handleBlogUrl={handleBlogUrl}
+					/>
+					{blogFormRows(() => blogsService.getAll())}
+				</div>
+			)}
+		</div>
+	)
+}
+
+export default App
