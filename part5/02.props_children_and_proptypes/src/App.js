@@ -71,7 +71,8 @@ const App = () => {
 		const blogObject = {
 			title: blogTitle,
 			author: blogAuthor,
-			url: blogUrl
+			url: blogUrl,
+			likes: 0
 		}
 
 		const blogCreated = await blogsService.create(blogObject)

@@ -1,9 +1,19 @@
 import React from 'react'
+import Togglable from './Togglable'
+
+const blogStyle = {
+  backgroundColor: 'gray'
+}
 
 const Blog = ({ blog }) => (
-  <div>
-    {blog.title} {blog.author}
-  </div>
+  <Togglable buttonLabel={blog.title}>
+    <div style={blogStyle}>
+      <p>{blog.title}</p>
+      <p>{blog.author}</p>
+      <p>Likes: {blog.likes} <button>Like</button></p>
+      <p>{blog.url}</p>
+    </div>
+  </Togglable>
 )
 
 export default Blog
