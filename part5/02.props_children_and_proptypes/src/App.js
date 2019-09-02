@@ -103,19 +103,19 @@ const App = () => {
 		<div>
 			<Notification message={notification}/>
 			<h1>Blogs</h1>
-				<Togglable buttonLabel='login' >
-					<FormLogin
-						handleLogin={handleLogin}
-						username={username}
-						password={password}
-						setUsername={setUsername}
-						setPassword={setPassword}
-					/>
-				</Togglable>
-				
-					{/* <p>
-						{user.name} logged in <button onClick={logout}>Logout</button>
-					</p> */}
+			{user === null
+				? <FormLogin
+					handleLogin={handleLogin}
+					username={username}
+					password={password}
+					setUsername={setUsername}
+					setPassword={setPassword}
+				/>
+				:
+				<div>
+				<p>
+					{user.name} logged in <button onClick={logout}>Logout</button>
+				</p>
 				<Togglable buttonLabel='new blog' ref={blogFormRef}>
 					<FormBlog 
 						createNewBlog={createNewBlog}
@@ -127,7 +127,11 @@ const App = () => {
 						handleBlogUrl={handleBlogUrl}
 					/>
 				</Togglable>
-			{blogFormRows(() => blogsService.getAll())}
+				{blogFormRows(() => blogsService.getAll())}
+				</div>
+			}
+				
+					
 		
 		</div>
 	)
