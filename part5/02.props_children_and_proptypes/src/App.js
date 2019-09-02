@@ -78,7 +78,24 @@ const App = () => {
 		const blogCreated = await blogsService.create(blogObject)
 		showNotification('blog created!')
 		setBlogs(blogs.concat(blogCreated))
-		
+	}
+
+	const likeInBlog = async (newObject) => {
+		console.log('liked')
+		const blogObject = {
+			id: newObject.id,
+			author: newObject.author,
+			title: newObject.title,
+			url: newObject.url,
+			likes: newObject.likes + 1
+		}
+		console.log(blogObject)
+		const blogUpdated = await blogsService.update(blogObject.id ,blogObject)
+		console.log(blogUpdated)
+		showNotification('blog liked!')
+		setBlogs(blogs.filter(
+			blog => blog.id !== blogObject.id
+		).concat(blogObject))
 	}
 
 	const showNotification = async (message) => {
@@ -95,7 +112,7 @@ const App = () => {
 
 	const blogFormRows = () =>
 		blogs.map(blog => {
-			return <Blog key={blog.id} blog={blog} />
+			return <Blog key={blog.id} blog={blog} like={likeInBlog}/>
 		})
 	
 	const blogFormRef = React.createRef()
