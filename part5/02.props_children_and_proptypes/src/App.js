@@ -5,6 +5,7 @@ import Blog from './components/Blog'
 import FormBlog from './components/FormBlog'
 import FormLogin from './components/FormLogin';
 import Notification from './components/Notification'
+import Togglable from './components/Togglable'
 
 const App = () => {
 	const [username, setUsername] = useState('')
@@ -12,6 +13,8 @@ const App = () => {
 	const [user, setUser] = useState(null)
 	const [blogs, setBlogs] = useState([])
 	const [notification, setNotification] = useState('')
+
+	const [loginVisible, setLoginVisible] = useState(false)
 
 	const [blogTitle, setBlogTitle] = useState('')
 	const [blogAuthor, setBlogAuthor] = useState('')
@@ -63,8 +66,8 @@ const App = () => {
 	}
 
 	const createNewBlog = async (event) => {
-		console.log('pajdosadihi')
 		event.preventDefault()
+		blogFormRef.current.toggleVisibility()
 		const blogObject = {
 			title: blogTitle,
 			author: blogAuthor,
@@ -93,22 +96,27 @@ const App = () => {
 		blogs.map(blog => {
 			return <Blog key={blog.id} blog={blog} />
 		})
+	
+	const blogFormRef = React.createRef()
+
 	return (
 		<div>
 			<Notification message={notification}/>
-			{user === null ? (
-				<FormLogin 
-					handleLogin={handleLogin} 
-					username={username} 
-					password={password}
-					setUsername={setUsername}
-					setPassword={setPassword} 
-				/>
-			) : (
-				<div>
-					<p>
+			<h1>Blogs</h1>
+				<Togglable buttonLabel='login' >
+					<FormLogin
+						handleLogin={handleLogin}
+						username={username}
+						password={password}
+						setUsername={setUsername}
+						setPassword={setPassword}
+					/>
+				</Togglable>
+				
+					{/* <p>
 						{user.name} logged in <button onClick={logout}>Logout</button>
-					</p>
+					</p> */}
+				<Togglable buttonLabel='new blog' ref={blogFormRef}>
 					<FormBlog 
 						createNewBlog={createNewBlog}
 						blogTitle={blogTitle}
@@ -118,9 +126,9 @@ const App = () => {
 						handleBlogAuthor={handleBlogAuthor}
 						handleBlogUrl={handleBlogUrl}
 					/>
-					{blogFormRows(() => blogsService.getAll())}
-				</div>
-			)}
+				</Togglable>
+			{blogFormRows(() => blogsService.getAll())}
+		
 		</div>
 	)
 }
