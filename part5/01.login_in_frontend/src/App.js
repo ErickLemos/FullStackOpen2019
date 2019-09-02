@@ -4,12 +4,14 @@ import blogsService from './services/blogs'
 import Blog from './components/Blog'
 import FormBlog from './components/FormBlog'
 import FormLogin from './components/FormLogin';
+import Notification from './components/Notification'
 
 const App = () => {
 	const [username, setUsername] = useState('')
 	const [password, setPassword] = useState('')
 	const [user, setUser] = useState(null)
 	const [blogs, setBlogs] = useState([])
+	const [notification, setNotification] = useState('')
 
 	const [blogTitle, setBlogTitle] = useState('')
 	const [blogAuthor, setBlogAuthor] = useState('')
@@ -41,7 +43,7 @@ const App = () => {
 			setPassword('')
 			console.log('Happy user', user)
 		} catch (error) {
-			console.log('Wrong credentials')
+			showNotification('wrong username or password')
 			setTimeout(() => {
 				console.log('null')
 			}, 5000)
@@ -70,7 +72,16 @@ const App = () => {
 		}
 
 		const blogCreated = await blogsService.create(blogObject)
+		showNotification('blog created!')
 		setBlogs(blogs.concat(blogCreated))
+		
+	}
+
+	const showNotification = async (message) => {
+		setNotification(message)
+		const notification = setTimeout(() => {
+			setNotification('')
+		}, 3000)
 	}
 
 	const logout = () => {
@@ -82,9 +93,9 @@ const App = () => {
 		blogs.map(blog => {
 			return <Blog key={blog.id} blog={blog} />
 		})
-
 	return (
 		<div>
+			<Notification message={notification}/>
 			{user === null ? (
 				<FormLogin 
 					handleLogin={handleLogin} 
