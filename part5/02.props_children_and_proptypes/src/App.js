@@ -101,6 +101,18 @@ const App = () => {
 		).concat(blogObject))
 	}
 
+	const deleteBlog = async (event, blog) => {
+		event.preventDefault()
+		if (window.confirm(`remove blog ${blog.title} by ${blog.author}`)) {
+			blogsService.remove(blog.id).then(response => {
+				if(response !== 401) {
+					setBlogs(blogs.filter(blogTemp => blogTemp !== blog))
+				}
+				
+			})
+		}
+	}
+
 	const showNotification = async (message) => {
 		setNotification(message)
 		setTimeout(() => {
@@ -115,7 +127,7 @@ const App = () => {
 
 	const blogFormRows = () =>
 		blogs.map(blog => {
-			return <Blog key={blog.id} blog={blog} like={likeInBlog}/>
+			return <Blog key={blog.id} blog={blog} like={likeInBlog} deleteBlog={deleteBlog}/>
 		})
 	
 	const blogFormRef = React.createRef()
