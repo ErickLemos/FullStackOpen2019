@@ -6,6 +6,7 @@ import FormBlog from './components/FormBlog'
 import FormLogin from './components/FormLogin';
 import Notification from './components/Notification'
 import Togglable from './components/Togglable'
+import lodash from 'lodash'
 
 const App = () => {
 	const [username, setUsername] = useState('')
@@ -13,8 +14,6 @@ const App = () => {
 	const [user, setUser] = useState(null)
 	const [blogs, setBlogs] = useState([])
 	const [notification, setNotification] = useState('')
-
-	const [loginVisible, setLoginVisible] = useState(false)
 
 	const [blogTitle, setBlogTitle] = useState('')
 	const [blogAuthor, setBlogAuthor] = useState('')
@@ -30,7 +29,10 @@ const App = () => {
 	}, [])
 
 	useEffect(() => {
-		const blogs = blogsService.getAll().then(response => setBlogs(response))
+		const blogs = blogsService.getAll().then(response => {
+
+			setBlogs(lodash.sortBy(response, ['likes']))
+		})
 		console.log('[BLOGS_DATA]', blogs)
 	}, [])
 
@@ -90,6 +92,7 @@ const App = () => {
 			likes: newObject.likes + 1
 		}
 		console.log(blogObject)
+
 		const blogUpdated = await blogsService.update(blogObject.id ,blogObject)
 		console.log(blogUpdated)
 		showNotification('blog liked!')
@@ -100,7 +103,7 @@ const App = () => {
 
 	const showNotification = async (message) => {
 		setNotification(message)
-		const notification = setTimeout(() => {
+		setTimeout(() => {
 			setNotification('')
 		}, 3000)
 	}
