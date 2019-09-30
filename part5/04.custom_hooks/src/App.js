@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import loginService from './services/login'
 import blogsService from './services/blogs'
 import Blog from './components/Blog'
@@ -7,10 +7,14 @@ import FormLogin from './components/FormLogin'
 import Notification from './components/Notification'
 import Togglable from './components/Togglable'
 import lodash from 'lodash'
+import { useField } from './hooks'
 
 const App = () => {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+  const username = useField('text')
+  const password = useField('password')
+  //const [username, setUsername] = useState('')
+  //const [password, setPassword] = useState('')
+
   const [user, setUser] = useState(null)
   const [blogs, setBlogs] = useState([])
   const [notification, setNotification] = useState('')
@@ -39,13 +43,16 @@ const App = () => {
   const handleLogin = async event => {
     event.preventDefault()
     try {
-      const user = await loginService.login({ username, password })
+      const user = await loginService.login({
+        username: username.value,
+        password: password.value
+      })
       window.localStorage.setItem('logged', JSON.stringify(user))
       blogsService.setToken(user.token)
 
       setUser(user)
-      setUsername('')
-      setPassword('')
+      username.reset()
+      password.reset()
       console.log('Happy user', user)
     } catch (error) {
       showNotification('wrong username or password')
@@ -93,7 +100,7 @@ const App = () => {
     }
     console.log(blogObject)
 
-    const blogUpdated = await blogsService.update(blogObject.id ,blogObject)
+    const blogUpdated = await blogsService.update(blogObject.id, blogObject)
     console.log(blogUpdated)
     showNotification('blog liked!')
     setBlogs(blogs.filter(
@@ -141,8 +148,6 @@ const App = () => {
           handleLogin={handleLogin}
           username={username}
           password={password}
-          setUsername={setUsername}
-          setPassword={setPassword}
         />
         :
         <div>

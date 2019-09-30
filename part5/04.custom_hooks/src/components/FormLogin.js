@@ -1,26 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const FormLogin = ({ handleLogin, username, password, setUsername, setPassword }) => (
+const FormLogin = ({ handleLogin, username, password }) => (
   <form onSubmit={handleLogin}>
     <div>
             username
-      <input
-        type="text"
-        value={username}
-        name="Username"
-        onChange={({ target }) => setUsername(target.value)}
-      />
+      <input {...username}/>
     </div>
 
     <div>
             password
-      <input
-        type="password"
-        value={password}
-        name="Password"
-        onChange={({ target }) => setPassword(target.value)}
-      />
+      <input {...password}/>
     </div>
 
     <button type="submit">login</button>
