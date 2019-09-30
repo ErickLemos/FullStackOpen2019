@@ -19,9 +19,13 @@ const App = () => {
   const [blogs, setBlogs] = useState([])
   const [notification, setNotification] = useState('')
 
-  const [blogTitle, setBlogTitle] = useState('')
-  const [blogAuthor, setBlogAuthor] = useState('')
-  const [blogUrl, setBlogUrl] = useState('')
+  // BLOG FORM
+  const blogTitle = useField('text')
+  const blogAuthor = useField('text')
+  const blogUrl = useField('text')
+  //const [blogTitle, setBlogTitle] = useState('')
+  //const [blogAuthor, setBlogAuthor] = useState('')
+  //const [blogUrl, setBlogUrl] = useState('')
 
   useEffect(() => {
     const loggedUserJson = window.localStorage.getItem('logged')
@@ -51,8 +55,9 @@ const App = () => {
       blogsService.setToken(user.token)
 
       setUser(user)
-      username.reset()
-      password.reset()
+      username.onSubmit()
+      password.onSubmit()
+
       console.log('Happy user', user)
     } catch (error) {
       showNotification('wrong username or password')
@@ -62,30 +67,21 @@ const App = () => {
     }
   }
 
-  const handleBlogTitle = (event) => {
-    setBlogTitle(event.target.value)
-  }
-
-  const handleBlogAuthor = (event) => {
-    setBlogAuthor(event.target.value)
-  }
-
-  const handleBlogUrl = (event) => {
-    setBlogUrl(event.target.value)
-  }
-
   const createNewBlog = async (event) => {
     event.preventDefault()
     blogFormRef.current.toggleVisibility()
     const blogObject = {
-      title: blogTitle,
-      author: blogAuthor,
-      url: blogUrl,
+      title: blogTitle.value,
+      author: blogAuthor.value,
+      url: blogUrl.value,
       likes: 0
     }
 
     const blogCreated = await blogsService.create(blogObject)
     showNotification('blog created!')
+    blogTitle.onSubmit()
+    blogAuthor.onSubmit()
+    blogUrl.onSubmit()
     setBlogs(blogs.concat(blogCreated))
   }
 
@@ -160,9 +156,6 @@ const App = () => {
               blogTitle={blogTitle}
               blogAuthor={blogAuthor}
               blogUrl={blogUrl}
-              handleBlogTitle={handleBlogTitle}
-              handleBlogAuthor={handleBlogAuthor}
-              handleBlogUrl={handleBlogUrl}
             />
           </Togglable>
           {blogFormRows(() => blogsService.getAll())}
