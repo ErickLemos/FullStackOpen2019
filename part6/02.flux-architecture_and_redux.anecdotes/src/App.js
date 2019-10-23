@@ -11,7 +11,6 @@ const App = (props) => {
     };
 
 
-
     return (
         <div>
             <h2>Anecdotes</h2>
@@ -29,7 +28,7 @@ const App = (props) => {
             <h2>create new</h2>
             <AnecdoteForm props={props}></AnecdoteForm>
         </div>
-    )
+    );
 };
 
 export default App

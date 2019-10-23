@@ -18,4 +18,5 @@ const AnecdoteForm = ({props}) => {
     )
 };
 
-export default AnecdoteForm
+export default AnecdoteForm;
+
