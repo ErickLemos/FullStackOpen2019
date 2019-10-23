@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10e9d570-813a-4d6c-8144-c1ce50360542" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/AnecdoteList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AnecdoteForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AnecdoteForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AnecdoteList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AnecdoteList.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +66,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571854968606</updated>
-      <workItem from="1571854969861" duration="3833000" />
+      <workItem from="1571854969861" duration="3858000" />
     </task>
     <task id="LOCAL-00001" summary="part6: 3">
       <created>1571857188544</created>
@@ -113,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571858648233</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="part6:">
+      <created>1571858824198</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1571858824198</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +140,7 @@
     <MESSAGE value="part6: 5" />
     <MESSAGE value="part6: 6" />
     <MESSAGE value="part6: 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="part6: 7" />
+    <MESSAGE value="part6:" />
+    <option name="LAST_COMMIT_MESSAGE" value="part6:" />
   </component>
 </project>
