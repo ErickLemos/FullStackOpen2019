@@ -1,4 +1,5 @@
 import React from 'react'
+import { notificationDisplay } from '../reducers/notificationReducer';
 
 const Notification = ({props}) => {
     const style = {
@@ -6,11 +7,14 @@ const Notification = ({props}) => {
         padding: 10,
         borderWidth: 1
     };
-    return (
-        <div style={style}>
-            {props.getState().notification}
-        </div>
-    )
+
+    
+    if(props.getState().notification.display) {
+        setTimeout(() => props.dispatch(notificationDisplay(false)), 5000)
+        return <div style={style}>{props.getState().notification.message}</div>;
+    } else {
+        return null
+    }
 };
 
 export default Notification

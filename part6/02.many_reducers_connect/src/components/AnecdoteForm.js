@@ -7,7 +7,7 @@ const AnecdoteForm = ({props}) => {
         event.preventDefault();
         const content = event.target.anecdote.value;
         event.target.anecdote.value = '';
-        props.store.dispatch(createAnecdote(content));
+        props.dispatch(createAnecdote(content));
     };
 
     return (
