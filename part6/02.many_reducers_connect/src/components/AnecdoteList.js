@@ -6,10 +6,10 @@ const AnecdoteList = ({props}) => {
 
     const vote = (id) => {
         console.log('vote', id);
-        props.store.dispatch(voteAnecdote(id))
+        props.dispatch(voteAnecdote(id))
     };
 
-    const anecdotes = props.store.getState();
+    const anecdotes = props.getState().anecdotes;
     return (
         <>
             <h2>Anecdotes</h2>
