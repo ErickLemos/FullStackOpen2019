@@ -28,9 +28,15 @@ const AnecdoteList = (props) => {
     )
 };
 
+const anecdotesToShow = ({anecdotes, filter}) => {
+    return anecdotes.filter(obj =>
+        obj.content.toLowerCase().includes(filter.toLowerCase())
+    )
+};
+
 const mapStateToProps = (state) => {
     return {
-        anecdotes: state.anecdotes
+        anecdotes: anecdotesToShow(state)
     }
 };
 
