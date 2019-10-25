@@ -1,20 +1,35 @@
 import React from 'react'
-import { notificationDisplay } from '../reducers/notificationReducer';
+import {notificationDisplay} from '../reducers/notificationReducer';
+import {connect} from "react-redux";
 
-const Notification = ({props}) => {
+const Notification = (props) => {
     const style = {
         border: 'solid',
         padding: 10,
         borderWidth: 1
     };
 
-    
-    if(props.getState().notification.display) {
-        setTimeout(() => props.dispatch(notificationDisplay(false)), 5000)
-        return <div style={style}>{props.getState().notification.message}</div>;
+
+    if (props.notification.display) {
+        setTimeout(() => props.notificationDisplay(false), 5000);
+        return <div style={style}>{props.notification.message}</div>;
     } else {
         return null
     }
 };
 
-export default Notification
+const mapDispatchToProps = {
+    notificationDisplay
+};
+
+const mapStateToProps = (state) => {
+    return {
+        notification: state.notification
+    }
+};
+
+const ConnectedNotification = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Notification);
+export default ConnectedNotification
