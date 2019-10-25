@@ -11,7 +11,6 @@ const App = () => {
             <AnecdoteForm/>
             <AnecdoteList/>
         </div>
-
     );
 };
 
