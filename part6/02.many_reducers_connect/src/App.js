@@ -1,5 +1,6 @@
 import React from 'react';
 import AnecdoteList from "./components/AnecdoteList";
+import AnecdoteForm from "./components/AnecdoteForm";
 
 const App = (props) => {
     const store = props.store;
@@ -8,8 +9,8 @@ const App = (props) => {
         <div>
             {/*<Filter props={store}/>
             <Notification props={store}/>*/}
+            <AnecdoteForm props={store}/>
             <AnecdoteList props={store}/>
-            {/*<AnecdoteForm props={store}/>*/}
         </div>
     );
 };
