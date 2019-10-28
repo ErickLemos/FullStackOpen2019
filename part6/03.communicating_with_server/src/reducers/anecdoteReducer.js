@@ -8,7 +8,7 @@ const reducer = (state = [], action) => {
 
     switch (action.type) {
         case 'NEW_ANECDOTE':
-            return [...state, action.data];
+            return [...state, action.data.content];
         case 'INIT_ANECDOTES':
             return action.data;
         case 'VOTE':
@@ -39,9 +39,12 @@ export const initializeAnecdotes = (anecdotes) => {
 };
 
 export const createAnecdote = (content) => {
-    return {
-        type: 'NEW_ANECDOTE',
-        data: content
+    return async dispatch => {
+        const newAnecdote = await AnecdotesService.createNew(content);
+        dispatch({
+            type: 'NEW_ANECDOTE',
+            data: newAnecdote
+        })
     }
 };
 
