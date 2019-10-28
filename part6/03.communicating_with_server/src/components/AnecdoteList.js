@@ -29,8 +29,9 @@ const AnecdoteList = (props) => {
 };
 
 const anecdotesToShow = ({anecdotes, filter}) => {
+    console.log(anecdotes);
     return anecdotes.filter(obj =>
-        obj.content.toLowerCase().includes(filter.toLowerCase())
+        obj.content.toLowerCase().includes(filter)
     )
 };
 
