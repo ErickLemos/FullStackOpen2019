@@ -1,7 +1,5 @@
 import AnecdotesService from "../services/AnecdotesService";
 
-const getId = () => (100000 * Math.random()).toFixed(0);
-
 const reducer = (state = [], action) => {
     console.log('state now: ', state);
     console.log('action', action);
@@ -12,15 +10,7 @@ const reducer = (state = [], action) => {
         case 'INIT_ANECDOTES':
             return action.data;
         case 'VOTE':
-            const id = action.data.id;
-            const anecdoteToChange = state.find(n => n.id === id);
-            const anecdoteChance = {
-                ...anecdoteToChange,
-                votes: anecdoteToChange.votes += 1
-            };
-            return state.map(anecdote =>
-                anecdote.id !== id ? anecdote : anecdoteChance
-            ).sort((a, b) => b.votes - a.votes);
+            return state.sort((a, b) => b.votes - a.votes);
 
         default:
             return state;
@@ -49,11 +39,12 @@ export const createAnecdote = content => {
 };
 
 export const voteAnecdote = (obj) => {
-    return {
-        type: 'VOTE',
-        data: {
-            id: obj
-        }
+    return async dispatch => {
+        const changedAnecdote = await AnecdotesService.vote(obj);
+        dispatch({
+            type: 'VOTE',
+            data: changedAnecdote
+        })
     }
 };
 
